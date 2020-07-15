@@ -1,0 +1,66 @@
+@{
+    ViewData["Title"] = "Info Page";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+
+<style>
+    .main {
+        text-align: left;
+    }
+
+    .choice {
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    p:last-child {
+        margin: 0;
+    }
+
+    .green {
+        color: green;
+    }   
+
+    .red {
+        color: red;
+    }
+
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">DojoDachi</h1>
+    <div class="container">
+
+        <div class="main">
+            <button class="btn btn-primary choice">Feed</button>
+            <p>Feed your DojoDachi to receive Energy <span class="green">+5</span> , Fullness <span class="green">+5 - 10 </span>, and Meals <span class="red">-1</span>.</p>
+
+            <button class="btn btn-success choice">Play</button>
+            <p>Play with your DojoDachi to recieve Happiness <span class="green">+5 - 10 </span>, Energy <span class="red">-5</span>. Your Dojo Dachi must also have at least 5 Energy to play.</p>
+
+            <button class="btn btn-secondary choice">Work</button>
+            <p>Work your DojoDachi to recieve Meals <span class="green">+1 - 3</span> and Energy <span class="red">-5</span>.</p>
+
+            <button class="btn btn-danger choice">Sleep</button>
+            <p> Have your DojoDachi sleep your DojoDachi to recieve Energy <span class="green">+15</span>, Fullness <span class="red">-5</span>, and Happiness <span class="red">-5</span>.</p>
+
+            <h3>How to Win</h3>
+            <p>You win if your DojoDachis Fullness, Happiness, and Energy all surpass 100.</p>
+
+            <h3>How to Lose</h3>
+            <p>You lose if your DojoDachis Fullness, Happiness, or Energy reach zero.</p>
+            
+        </div>
+        
+        <a href="/restart"><button class="btn btn-info">Back home</button></a>     
+    </div>
+</div>

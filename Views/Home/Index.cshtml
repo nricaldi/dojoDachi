@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using dojoDachi.Models
+@model DojoDachi
+
+<head>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+
+<style>
+    
+    img {
+        height: 300px;
+        width: 300px;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin: 0;
+    }
+
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">DojoDachi</h1>
+    <div class="container">
+        <ul>
+            <li>Fullness: @Model.Fullness</li>
+            <li>Happiness: @Model.Happiness</li>
+            <li>Meals: @Model.Meals</li>
+            <li>Energy: @Model.Energy</li>
+        </ul>
+
+        <div class="main">
+            @{
+                if(@Model.ImageUrl == "start"){
+                    <img src="~/images/starterImage.jpg" alt="hello goku">
+                }
+                else if (@Model.ImageUrl == "sleep"){
+                    <img src="~/images/sleep.jpg" alt="sleeping goku">
+                }
+                else if(@Model.ImageUrl == "likeFood"){
+                    <img src="~/images/likeFood.gif" alt="eating goku">
+                }
+                else if(@Model.ImageUrl == "sad"){
+                    <img src="~/images/sad.jpg" alt="sad goku">
+                }
+                else if(@Model.ImageUrl == "notLikeFood"){
+                    <img src="~/images/notLikeFood.gif" alt="not like food goku">
+                }
+                else if(@Model.ImageUrl == "play"){
+                    <img src="~/images/playing.jpg" alt="playing goku">
+                }
+                else if(@Model.ImageUrl == "work"){
+                    <img src="~/images/working.jpg" alt="working goku">
+                }
+                else if(@Model.ImageUrl == "tired"){
+                    <img src="~/images/tired.jpg" alt="tired goku">
+                }
+                else if(@Model.ImageUrl == "hungry"){
+                    <img src="~/images/hungry.gif" alt="hungry goku">
+                }
+                else if(@Model.ImageUrl == "win"){
+                    <img src="~/images/win.png" alt="win goku">
+                }
+                else if(@Model.ImageUrl == "dead"){
+                    <img src="~/images/dead.jpg" alt="dead goku">
+                }
+            
+                <p>@Model.Reaction</p>
+
+                if(@Model.Continue()){
+                    <a href="/feed"><button class="btn btn-primary">Feed</button></a>
+                    <a href="/play"><button class="btn btn-success">Play</button></a>
+                    <a href="/work"><button class="btn btn-secondary">Work</button></a>
+                    <a href="/sleep"><button class="btn btn-danger">Sleep</button></a>
+                }
+                @* else{
+                    <a href="/restart"><button class="btn btn-primary">Restart</button></a>            
+                } *@
+            }
+
+            
+        </div>
+        
+        <a href="/restart"><button class="btn btn-info">Restart</button></a>    
+        <a href="/info"><button class="btn btn-info">Information</button></a>        
+
+    </div>
+</div>
